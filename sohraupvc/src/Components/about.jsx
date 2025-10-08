@@ -101,43 +101,7 @@ export default function AboutUs() {
        
       
 
-        {/* Video Modal */}
-        {showVideo && (
-          <div className="video-modal" onClick={handleCloseVideo}>
-            <div className="video-modal-outer">
-              <div className="video-modal-container">
-                <div className="video-modal-content" onClick={e => e.stopPropagation()}>
-                  <button className="close-modal-btn" onClick={handleCloseVideo}>
-                    ×
-                  </button>
-                  <div style={{
-                    padding:'56.25% 0 0 0',
-                    position:'relative',
-                    maxWidth: '900px',
-                    margin: '0 auto',
-                    width: '100%',
-                  }}>
-                    <iframe
-                      src="https://player.vimeo.com/video/1120800744?autoplay=1&title=0&byline=0&portrait=0&controls=0&sidedock=0&badge=0&background=1&muted=0"
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        border: 'none',
-                      }}
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowFullScreen
-                      title="Sohra UPVC Industries Story"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+      
 
         {/* Mission, Vision, Values Section */}
         <div
