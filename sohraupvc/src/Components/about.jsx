@@ -98,36 +98,8 @@ export default function AboutUs() {
           </motion.div>
         </div>
 
-        {/* Discover Our Story Button Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          style={{
-            maxWidth: "1200px",
-            margin: "60px auto",
-            textAlign: "center",
-          }}
-        >
-          <motion.button
-            onClick={() => setShowVideo(true)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-              fontSize: "clamp(1.2rem, 2vw, 1.5rem)",
-              padding: "15px 30px",
-              backgroundColor: "#1788c7",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              fontWeight: "bold",
-            }}
-          >
-            Discover Our Story
-          </motion.button>
-        </motion.div>
+       
+      
 
         {/* Video Modal */}
         {showVideo && (
