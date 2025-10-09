@@ -131,3 +131,10 @@
     font-size: 14px;
   }
 }
+.success-message {
+  color: #22c55e; /* green */
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}

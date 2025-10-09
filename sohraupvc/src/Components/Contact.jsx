@@ -1,24 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function Contact() {
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      setSuccess(true);
+      e.target.reset(); // clear form after submit
+      setTimeout(() => setSuccess(false), 4000); // hide message after 4 sec
+    } else {
+      alert("❌ Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <>
       <Navbar />
 
       <div className="contact-container">
         <div className="contact-content">
-          {/* Left Side - Info */}
+          {/* Left Side */}
           <div className="contact-info">
             <h2>Get in Touch</h2>
             <p>
-               <strong>📍 Address:</strong><br />
-      Survey No. 487/2 (Near Jaggkhedi Panchayat Bhawan)<br />
-      Sanjeet Road, Village – Jaggkhedi<br />
-      District – Mandsaur, Madhya Pradesh
-
+              <strong>📍 Address:</strong>
+              <br />
+              Survey No. 487/2 (Near Jaggkhedi Panchayat Bhawan)
+              <br />
+              Sanjeet Road, Village – Jaggkhedi
+              <br />
+              District – Mandsaur, Madhya Pradesh
             </p>
             <p>
               <strong>📞 Phone:</strong> +91 7470955631
@@ -27,7 +49,6 @@ export default function Contact() {
               <strong>📧 Email:</strong> info@sohraupvc.com
             </p>
 
-            {/* Google Map Embed */}
             <div className="map-container">
               <iframe
                 title="sohra-map"
@@ -44,11 +65,51 @@ export default function Contact() {
           {/* Right Side - Form */}
           <div className="contact-form">
             <h2>Send Us a Message</h2>
-            <form>
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-              <button type="submit">Send Message</button>
+
+            <form onSubmit={handleSubmit}>
+              <input
+                type="hidden"
+                name="access_key"
+                value="b5a27c27-87b8-4835-993b-38d732bc37e6"
+              />
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="input-field"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="input-field"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+                className="input-field"
+              ></textarea>
+
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: "none" }}
+              />
+
+              <button type="submit" className="submit-btn">
+                Submit Form
+              </button>
+
+              {/* ✅ Success Popup Message */}
+              {success && (
+                <p className="success-message">✅ Message sent successfully!</p>
+              )}
             </form>
           </div>
         </div>
