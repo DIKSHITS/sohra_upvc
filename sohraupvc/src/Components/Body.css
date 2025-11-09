@@ -479,3 +479,356 @@ body.modal-open {
 body, html {
   overflow-x: hidden;
 }
+/* === Mini Player (inline) === */
+.mini-player-card {
+  margin-top: 16px;
+  max-width: 380px;
+  width: 100%;
+}
+
+.mini-player-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,.35);
+  overflow: hidden;
+}
+
+.mini-player-inner {
+  position: absolute;
+  inset: 0;
+}
+
+/* Overlay controls on the mini player */
+.mini-controls {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background: rgba(0,0,0,.45);
+  padding: 6px 8px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+/* Shared control button style */
+.ctl {
+  font: 500 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  background: rgba(255,255,255,.07);
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+
+.ctl:hover { transform: translateY(-1px); }
+
+.ctl[aria-pressed="true"] {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.35);
+}
+
+/* Brand-accented action */
+.ctl.highlight {
+  border-color: rgba(23,136,199,.8);   /* #1788C7 */
+  background: rgba(23,136,199,.22);
+}
+
+.label {
+  color: #fff;
+  opacity: .9;
+  font-size: 12px;
+  margin-right: 2px;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,.25);
+  margin: 0 4px;
+}
+
+.spacer { flex: 1; }
+
+/* === Modal Player additions (control bar) === */
+.modal-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-player-inner {
+  position: absolute;
+  inset: 0;
+}
+
+/* Bottom control bar inside the modal */
+.modal-controls {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
+  pointer-events: auto;
+}
+
+/* Make sure modal content sits above blur and catches clicks */
+.video-content-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === Close button (dedup + brand hover) === */
+.close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 18px;
+  line-height: 36px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  z-index: 100000;
+}
+
+.close-modal-btn:hover {
+  transform: scale(1.05);
+  background: #fff;
+  color: #000;
+  border-color: #1788C7;
+}
+
+/* === Responsive tweaks for controls === */
+@media (max-width: 768px) {
+  .mini-controls { gap: 4px; padding: 6px; }
+  .ctl { padding: 7px 8px; font-size: 11px; }
+  .modal-controls { gap: 6px; padding: 8px; }
+}
+
+@media (max-width: 480px) {
+  .mini-player-card { max-width: 100%; }
+  .label { display: none; }            /* save space */
+  .divider { display: none; }          /* save space */
+}
+/* Buttons for brochure */
+.brochure-btn,
+.brochure-download-link {
+  background: #fff;
+  color: #1788C7;
+  border: 2px solid #1788C7;
+  border-radius: 8px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  height: 50px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;  /* for <a> */
+  cursor: pointer;
+  transition: background 0.22s, box-shadow 0.22s, color 0.22s, border 0.22s;
+  box-shadow: 0 2px 8px rgba(32,164,122,0.12);
+}
+.brochure-btn:hover,
+.brochure-download-link:hover {
+  color: #0f6aa0;
+  border-color: #0f6aa0;
+  box-shadow: 0 6px 20px rgba(32,164,122,0.17);
+}
+
+/* PDF modal tweaks (reuse video modal visuals) */
+.pdf-container { aspect-ratio: 16 / 9; }
+.pdf-aspect { position: relative; width: 100%; height: 100%; }
+.pdf-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+}
+/* ===== PDF: document-style modal ===== */
+.pdf-modal-shell {
+  position: relative;
+  width: min(100%, 920px);
+  height: min(92vh, 100vh - 24px);
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.45);
+  animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #f7fbff, #eef6fd);
+  border-bottom: 1px solid #e2edf7;
+}
+
+.pdf-toolbar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: #0d4f79;
+}
+.pdf-hint {
+  font-size: 12px;
+  color: #5b8bb0;
+}
+
+.pdf-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Reuse your .ctl styles; just ensure buttons look fine on light bg */
+.pdf-toolbar .ctl {
+  color: #0d4f79;
+  border-color: rgba(13,79,121,.25);
+  background: rgba(13,79,121,.06);
+}
+.pdf-toolbar .ctl.highlight {
+  border-color: rgba(23,136,199,.8);
+  background: rgba(23,136,199,.18);
+  color: #0a3d60;
+}
+
+/* Put the close “✕” nicely in the toolbar */
+.pdf-toolbar .close-modal-btn {
+  position: static;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+  background: rgba(0,0,0,.06);
+  color: #0d4f79;
+  border: 1px solid rgba(13,79,121,.15);
+}
+.pdf-toolbar .close-modal-btn:hover {
+  background: #1788C7;
+  color: #fff;
+  border-color: #1788C7;
+}
+
+.pdf-viewer {
+  flex: 1;               /* fill remaining height */
+  background: #f1f5f9;   /* subtle gray around the PDF */
+  overflow: hidden;      /* clip inner scroll to rounded corners */
+  display: grid;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+/* Fallback box inside <object> if PDF embedding is blocked */
+.pdf-fallback {
+  padding: 24px;
+  text-align: center;
+  color: #0d4f79;
+}
+.pdf-fallback-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Small screens */
+@media (max-width: 560px) {
+  .pdf-modal-shell {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    border-radius: 10px;
+  }
+  .pdf-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pdf-toolbar-left strong { font-size: 14px; }
+  .pdf-hint { display: none; }
+  .pdf-toolbar .ctl { padding: 6px 8px; font-size: 12px; }
+}
+/* Phone: make the overlay and PDF viewer full screen and touch friendly */
+@media (max-width: 560px) {
+  .video-modal {
+    padding: 0;                 /* remove side padding */
+    background: rgba(0,0,0,.85);
+  }
+
+  .pdf-modal-shell {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;           /* edge-to-edge */
+  }
+
+  .pdf-toolbar {
+    padding: 10px 12px;
+  }
+
+  .pdf-viewer {
+    background: #000;           /* better contrast around PDF */
+  }
+
+  .pdf-frame,
+  .pdf-viewer object {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* improve scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  /* Make the control buttons a bit smaller */
+  .pdf-toolbar .ctl {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  /* Use a smaller close button */
+  .pdf-toolbar .close-modal-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
