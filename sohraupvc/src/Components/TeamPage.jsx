@@ -21,7 +21,7 @@ const teamMembers = [
     bio: "Mahesh Malviya manages administrative operations efficiently, ensuring smooth workflows and organizational growth.",
   },
   {
-    name: "Arvind Yadav",
+    name: "Anar Singh Rajak",
     role: "Marketing Manager",
     image: person3,
     bio: "Arvind Yadav drives our marketing strategies, building strong brand presence and connecting with customers effectively.",
