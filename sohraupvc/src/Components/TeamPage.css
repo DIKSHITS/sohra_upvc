@@ -1,245 +1,519 @@
-/* =======================
-   Team Page Header
-======================= */
-.team-header {
-  background: white;
-  color: black;
-  text-align: center;
-  padding: 40px 20px;
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.team-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f8fa;
+  color: #111827;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
-.team-header h1 {
+
+/* =====================================================
+   TEAM SECTION
+===================================================== */
+
+.team-section {
+  width: 100%;
+  padding: 80px 20px 90px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.team-header,
+.project-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.team-header h1,
+.project-header h1 {
   margin: 0;
-  font-size: 2.5rem;
+
+  font-size: 48px;
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  color: #101820;
 }
 
-.team-header p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #444;
+.team-header p,
+.project-header p {
+  margin: 14px 0 0;
+
+  font-size: 17px;
+
+  color: #6b7280;
 }
 
-/* =======================
-   Team Container
-======================= */
+.heading-line {
+  width: 72px;
+  height: 3px;
+
+  margin: 12px auto 0;
+
+  background: #c9963e;
+
+  border-radius: 50px;
+}
+
+
+/* =====================================================
+   TEAM CONTAINER
+===================================================== */
+
 .team-container {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 40px 20px;
-  max-width: 1200px;
+  width: min(1170px, 94%);
   margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
 }
 
-/* =======================
-   Team Card
-======================= */
+
+/* =====================================================
+   TEAM CARD
+===================================================== */
+
 .team-card {
-  background: #f9f9f9;
-  border-radius: 15px;
+  min-height: 430px;
+
+  padding: 38px 35px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
-  padding: 25px 20px;
-  transition: all 0.3s ease;
-  overflow: hidden; /* ✅ FIX */
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.07);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.12);
 }
 
-/* =======================
-   Team Image (FIXED)
-======================= */
-.team-card img {
-  width: 120px;
-  height: 120px;
+
+/* =====================================================
+   IMPORTANT:
+   FIXED SQUARE IMAGE CONTAINER
+===================================================== */
+
+.team-image-box {
+  width: 165px;
+  height: 165px;
+
+  min-width: 165px;
+  min-height: 165px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 4px solid #063b70;
+
+  padding: 4px;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.16);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   FOUNDER IMAGE
+===================================================== */
+
+.team-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
   border-radius: 50%;
 
   object-fit: cover;
-  object-position: 50% 20%; /* 🔥 PERFECT FACE ALIGN */
 
-  border: 3px solid #003366;
+  /*
+    This removes the black bars from Mahesh's
+    original portrait.
+  */
 
-  display: block;
-  margin: 0 auto;
+  object-position: center 28%;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: #ffffff;
 }
 
-/* =======================
-   Text
-======================= */
-.team-card h2 {
-  margin-top: 15px;
-  font-size: 1.3rem;
-  color: #003366;
+
+/* =====================================================
+   SATISH IMAGE POSITION
+===================================================== */
+
+.team-card:first-child .team-image {
+  object-position: center 20%;
 }
 
-.team-card .role {
-  font-size: 1rem;
-  color: #666;
-  margin: 5px 0;
-  font-weight: bold;
+
+/* =====================================================
+   MAHESH IMAGE POSITION
+===================================================== */
+
+.team-card:nth-child(2) .team-image {
+  object-position: center 25%;
 }
 
-.team-card .bio {
-  font-size: 0.9rem;
-  color: #444;
-  margin: 10px 0;
-  line-height: 1.5;
+
+/* =====================================================
+   TEAM CONTENT
+===================================================== */
+
+.team-content {
+  width: 100%;
+
+  margin-top: 25px;
 }
 
-/* =======================
-   Social Links
-======================= */
-.socials {
-  margin-top: 12px;
-}
-
-.socials a {
-  margin: 0 10px;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: #003366;
-  transition: all 0.3s ease;
-}
-
-.socials a:hover {
-  color: #ff6600;
-  transform: scale(1.2);
-}
-
-/* =======================
-   Completed Projects Section
-======================= */
-.project-header {
-  background: #f4f4f4;
-  color: black;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 40px;
-  border-top: 2px solid #ddd;
-}
-
-.project-header h1 {
+.team-content h2 {
   margin: 0;
-  font-size: 2.5rem;
-  color: #003366;
+
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  color: #063b70;
 }
 
-.project-header p {
+.team-role {
   margin-top: 10px;
-  font-size: 1.1rem;
-  color: #444;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  color: #c58c35;
 }
+
+.team-bio {
+  max-width: 540px;
+
+  margin: 18px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: #667085;
+}
+
+
+/* =====================================================
+   PROJECT SECTION
+===================================================== */
+
+.projects-section {
+  width: 100%;
+
+  padding: 20px 20px 100px;
+}
+
+
+/* =====================================================
+   PROJECT CONTAINER
+===================================================== */
 
 .project-container {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  padding: 40px 20px;
-  max-width: 1200px;
+  width: min(1170px, 94%);
+
   margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
 }
 
-/* =======================
-   Project Card
-======================= */
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
 .project-card {
-  background: #ffffff;
-  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.13);
 }
 
-.project-card img {
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.project-image-box {
   width: 100%;
-  height: 180px;
+
+  height: 235px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
   object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.5s ease;
 }
 
-.project-card h2 {
-  font-size: 1.2rem;
-  margin: 15px;
-  color: #003366;
+.project-card:hover .project-image {
+  transform: scale(1.06);
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  margin: 0 15px 15px;
-  color: #444;
-  line-height: 1.5;
-}
 
-/* =======================
-   Footer
-======================= */
-.team-footer {
-  background: #003366;
-  color: white;
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.project-content {
+  padding: 24px 24px 28px;
+
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
 }
 
-/* =======================
-   Responsive Tweaks
-======================= */
-@media (max-width: 768px) {
+.project-content h2 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  color: #063b70;
+}
+
+.project-content p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #667085;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .team-section {
+    padding-top: 65px;
+  }
+
   .team-header h1,
   .project-header h1 {
-    font-size: 2rem;
+    font-size: 40px;
+  }
+
+  .team-container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+  }
+
+  .project-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .team-section {
+    padding: 55px 15px 70px;
+  }
+
+  .projects-section {
+    padding: 10px 15px 70px;
+  }
+
+
+  /* Header */
+
+  .team-header,
+  .project-header {
+    margin-bottom: 35px;
+  }
+
+  .team-header h1,
+  .project-header h1 {
+    font-size: 32px;
   }
 
   .team-header p,
   .project-header p {
-    font-size: 1rem;
+    font-size: 14px;
+
+    line-height: 1.6;
   }
 
-  .team-card img {
-    width: 100px;
-    height: 100px;
+
+  /* Team */
+
+  .team-container {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
   }
 
-  .team-card h2,
-  .project-card h2 {
-    font-size: 1.1rem;
-  }
 
-  .team-card .bio,
-  .project-card p {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .team-header h1,
-  .project-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .team-header p,
-  .project-header p {
-    font-size: 0.9rem;
-  }
+  /* Card */
 
   .team-card {
-    padding: 20px 15px;
+    min-height: auto;
+
+    padding: 30px 22px 32px;
+
+    border-radius: 16px;
   }
 
-  .team-card img {
-    width: 90px;
-    height: 90px;
+
+  /* Portrait */
+
+  .team-image-box {
+    width: 145px;
+    height: 145px;
+
+    min-width: 145px;
+    min-height: 145px;
   }
 
-  .socials a {
-    font-size: 1.2rem;
+
+  .team-content {
+    margin-top: 20px;
   }
+
+  .team-content h2 {
+    font-size: 23px;
+  }
+
+  .team-role {
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .team-bio {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  /* Projects */
+
+  .project-container {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .project-image-box {
+    height: 220px;
+  }
+
+  .project-content {
+    padding: 22px 20px 25px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .team-image-box {
+    width: 130px;
+    height: 130px;
+
+    min-width: 130px;
+    min-height: 130px;
+  }
+
+  .team-content h2 {
+    font-size: 21px;
+  }
+
 }
