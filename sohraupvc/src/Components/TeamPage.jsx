@@ -65,10 +65,10 @@ const completedProjects = [
 // TEAM PAGE
 // =====================================================
 
-export default function TeamPage() {
+export default function TeamPage({ includeLayout = true }) {
   return (
     <>
-      <Navbar />
+      {includeLayout && <Navbar />}
 
       <main className="team-page">
 
@@ -210,7 +210,7 @@ export default function TeamPage() {
 
       </main>
 
-      <Footer />
+      {includeLayout && <Footer />}
     </>
   );
 }

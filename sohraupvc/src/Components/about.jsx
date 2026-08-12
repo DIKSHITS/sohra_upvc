@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 import upvcImg from "./logo/upvc.png"; // ✅ correct relative path
 
-export default function AboutUs() {
+export default function AboutUs({ includeLayout = true }) {
   const [showVideo, setShowVideo] = useState(false);
 
   const handleCloseVideo = () => {
@@ -13,7 +13,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <Navbar />
+      {includeLayout && <Navbar />}
       <div
         style={{
           background: "#fff", // solid background
@@ -165,7 +165,7 @@ export default function AboutUs() {
           ))}
         </div>
       </div>
-      <Footer />
+      {includeLayout && <Footer />}
     </>
   );
 }

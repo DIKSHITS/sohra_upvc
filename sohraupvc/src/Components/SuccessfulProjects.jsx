@@ -85,13 +85,13 @@ const projectVideos = [
   },
 ];
 
-const SuccessfulProjects = () => {
+const SuccessfulProjects = ({ includeLayout = true }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
     <>
-    <Navbar/>
+    {includeLayout && <Navbar />}
     <section className="projects-page">
 
       {/* Hero */}
@@ -266,7 +266,7 @@ const SuccessfulProjects = () => {
       )}
 
     </section>
-    <Footer/>
+    {includeLayout && <Footer />}
     </>
   );
 };
