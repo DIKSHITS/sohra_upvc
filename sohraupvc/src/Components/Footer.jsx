@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo from "./logo/sohra-updated.png";
+import logo from "./logo/sohra-metal-logo.png";
 import makeInIndia from "./logo/Make_In_India.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
