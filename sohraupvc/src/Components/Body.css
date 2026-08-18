@@ -16,40 +16,59 @@ body {
   overflow-x: hidden;
 }
 
+
 /* =====================================================
    BROCHURE BUTTON
 ===================================================== */
 
 .brochure-btn {
   padding: 14px 24px;
-  border: 2px solid #168bd0;
+
+  border: 2px solid #000000;
   border-radius: 8px;
-  background: #ffffff;
-  color: #168bd0;
+
+  background: #ffffff !important;
+  color: #000000 !important;
+
   font-size: 16px;
   font-weight: 600;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 12px;
+
   min-height: 50px;
 }
 
 .brochure-btn:hover {
-  background: #168bd0;
-  color: #ffffff;
+  background: #000000 !important;
+  color: #ffffff !important;
+
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(22, 139, 208, 0.2);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .brochure-btn .button-arrow {
+  color: #000000 !important;
+
   font-size: 20px;
-  transition: transform 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .brochure-btn:hover .button-arrow {
+  color: #ffffff !important;
+
   transform: translateY(2px);
 }
 
@@ -60,27 +79,16 @@ body {
 
 .hero-buttons {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 16px;
+
   align-items: center;
+
+  margin-bottom: 38px;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .hero-buttons button {
-    width: 100%;
-  }
-}
 
 /* =========================================================
    HERO
@@ -88,10 +96,13 @@ body {
 
 .sohra-hero {
   position: relative;
+
   width: 100%;
+
   min-height: 650px;
 
   display: grid;
+
   grid-template-columns: 46% 54%;
 
   background: #f7fbff;
@@ -104,12 +115,15 @@ body {
 
 .hero-content {
   position: relative;
+
   z-index: 5;
 
   padding: 75px 50px 95px 10%;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 
   background:
@@ -128,12 +142,15 @@ body {
   width: fit-content;
 
   display: flex;
+
   align-items: center;
+
   gap: 8px;
 
   padding: 7px 15px;
 
   border: 1px solid #cbdfff;
+
   border-radius: 30px;
 
   background: rgba(255, 255, 255, 0.7);
@@ -141,6 +158,7 @@ body {
   color: #1456df;
 
   font-size: 13px;
+
   font-weight: 600;
 
   margin-bottom: 20px;
@@ -188,21 +206,15 @@ body {
   font-size: 17px;
 
   line-height: 1.75;
+
   word-wrap: break-word;
 }
 
 
 /* =========================================================
-   BUTTONS
+   PRIMARY + SECONDARY BUTTON
+   WHITE BACKGROUND / BLACK TEXT
 ========================================================= */
-
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  margin-bottom: 38px;
-}
 
 .primary-btn,
 .secondary-btn {
@@ -212,61 +224,110 @@ body {
 
   border-radius: 10px;
 
+  background: #ffffff !important;
+
+  color: #000000 !important;
+
+  border: 2px solid #000000;
+
   font-size: 14px;
+
   font-weight: 700;
 
   cursor: pointer;
 
+  text-shadow: none;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
 .primary-btn {
-  border: none;
+  background: #ffffff !important;
 
-  background: #0758df;
+  color: #000000 !important;
 
-  color: white;
+  border: 2px solid #000000;
 
-  box-shadow: 0 10px 25px rgba(7, 88, 223, 0.2);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .primary-btn:hover {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
   transform: translateY(-3px);
 
-  box-shadow: 0 15px 30px rgba(7, 88, 223, 0.3);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.22);
 }
 
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
 .secondary-btn {
-  border: 1.5px solid #1764dd;
+  background: #ffffff !important;
 
-  background: rgba(255, 255, 255, 0.7);
+  color: #000000 !important;
 
-  color: #1558c9;
+  border: 2px solid #000000;
 }
 
 .secondary-btn:hover {
+  background: #000000 !important;
+
+  color: #ffffff !important;
+
   transform: translateY(-3px);
 
-  background: #ffffff;
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.2);
 }
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
 
 .button-arrow {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   width: 22px;
+
   height: 22px;
 
   margin-left: 10px;
 
   border-radius: 50%;
 
+  color: #000000 !important;
+
   font-size: 20px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.primary-btn:hover .button-arrow,
+.secondary-btn:hover .button-arrow {
+  color: #ffffff !important;
 }
 
 
@@ -289,6 +350,7 @@ body {
   padding: 0 15px;
 
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -306,12 +368,15 @@ body {
 
 .feature-icon {
   width: 38px;
+
   height: 38px;
 
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -355,6 +420,7 @@ body {
   position: relative;
 
   width: 100%;
+
   min-height: 650px;
 
   overflow: hidden;
@@ -363,7 +429,9 @@ body {
 }
 
 
-/* Diagonal edge */
+/* =========================================================
+   DIAGONAL EDGE
+========================================================= */
 
 .hero-image-area::before {
   content: "";
@@ -373,14 +441,20 @@ body {
   z-index: 3;
 
   left: -1px;
+
   top: -10%;
 
   width: 110px;
+
   height: 125%;
 
   background: #f7fbff;
 
-  clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
+  clip-path:
+    polygon(0 0,
+      100% 0,
+      20% 100%,
+      0 100%);
 }
 
 
@@ -390,6 +464,7 @@ body {
 
 .hero-image {
   width: 100%;
+
   height: 100%;
 
   min-height: 650px;
@@ -407,11 +482,13 @@ body {
 
   from {
     opacity: 0.3;
+
     transform: scale(1.03);
   }
 
   to {
     opacity: 1;
+
     transform: scale(1);
   }
 
@@ -432,6 +509,7 @@ body {
   transform: translateY(-50%);
 
   width: 55px;
+
   height: 55px;
 
   border: none;
@@ -449,7 +527,9 @@ body {
   cursor: pointer;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   box-shadow:
@@ -486,11 +566,13 @@ body {
   z-index: 10;
 
   left: 50%;
+
   bottom: 22px;
 
   transform: translateX(-50%);
 
   display: flex;
+
   align-items: center;
 
   gap: 7px;
@@ -504,6 +586,7 @@ body {
 
 .slider-dot {
   width: 10px;
+
   height: 10px;
 
   padding: 0;
@@ -574,12 +657,15 @@ body {
 
 .stat-icon {
   width: 48px;
+
   height: 48px;
 
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -654,6 +740,7 @@ body {
 
   .hero-content {
     padding-left: 7%;
+
     padding-right: 25px;
   }
 
@@ -666,7 +753,8 @@ body {
   }
 
   .features {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
 
     row-gap: 15px;
   }
@@ -696,7 +784,10 @@ body {
     min-height: auto;
   }
 
-  /* IMAGE FIRST */
+
+  /* =====================================================
+     IMAGE FIRST
+  ===================================================== */
 
   .hero-image-area {
     order: 1;
@@ -717,7 +808,9 @@ body {
   }
 
 
-  /* CONTENT */
+  /* =====================================================
+     CONTENT
+  ===================================================== */
 
   .hero-content {
     order: 2;
@@ -731,10 +824,17 @@ body {
     margin-bottom: 16px;
 
     font-size: 11px;
+
+    white-space: normal;
+
+    max-width: 100%;
   }
 
   .hero-content h1 {
-    font-size: clamp(30px, 9vw, 38px);
+    font-size:
+      clamp(30px,
+        9vw,
+        38px);
 
     line-height: 1.08;
 
@@ -747,16 +847,14 @@ body {
     line-height: 1.7;
 
     margin: 20px 0 25px;
-    max-width: 100%;
-  }
 
-  .hero-tag {
-    white-space: normal;
     max-width: 100%;
   }
 
 
-  /* BUTTONS */
+  /* =====================================================
+     MOBILE BUTTONS
+  ===================================================== */
 
   .hero-buttons {
     flex-direction: column;
@@ -766,18 +864,40 @@ body {
     gap: 10px;
 
     margin-bottom: 30px;
-  }
 
-  .primary-btn,
-  .secondary-btn {
     width: 100%;
   }
 
+  .primary-btn,
+  .secondary-btn,
+  .brochure-btn {
+    width: 100%;
 
-  /* FEATURES */
+    min-height: 52px;
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #000000;
+  }
+
+  .primary-btn:hover,
+  .secondary-btn:hover,
+  .brochure-btn:hover {
+    background: #000000 !important;
+
+    color: #ffffff !important;
+  }
+
+
+  /* =====================================================
+     MOBILE FEATURES
+  ===================================================== */
 
   .features {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
 
     gap: 20px 0;
   }
@@ -786,6 +906,7 @@ body {
     padding: 0 10px;
 
     border-right: none;
+
     text-align: left;
   }
 
@@ -799,10 +920,13 @@ body {
   }
 
 
-  /* ARROWS */
+  /* =====================================================
+     MOBILE ARROWS
+  ===================================================== */
 
   .slider-arrow {
     width: 45px;
+
     height: 45px;
 
     font-size: 30px;
@@ -817,16 +941,20 @@ body {
   }
 
 
-  /* STATS */
+  /* =====================================================
+     MOBILE STATS
+  ===================================================== */
 
   .stats-card {
-    width: calc(100% - 30px);
+    width:
+      calc(100% - 30px);
 
     margin: -55px auto 30px;
 
     padding: 25px 15px;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
 
     gap: 25px 10px;
 
@@ -845,6 +973,7 @@ body {
 
   .stat-icon {
     width: 42px;
+
     height: 42px;
 
     font-size: 18px;
@@ -879,7 +1008,10 @@ body {
   }
 
   .hero-content h1 {
-    font-size: clamp(27px, 8vw, 32px);
+    font-size:
+      clamp(27px,
+        8vw,
+        32px);
   }
 
   .hero-content p {
@@ -888,6 +1020,7 @@ body {
 
   .hero-tag {
     font-size: 10px;
+
     padding: 7px 12px;
   }
 
@@ -897,6 +1030,7 @@ body {
 
   .feature-icon {
     width: 32px;
+
     height: 32px;
 
     font-size: 14px;
