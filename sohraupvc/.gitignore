@@ -54,3 +54,5 @@ Thumbs.db
 *.bak
 .DS_Store
 desktop.ini
+.DS_Store
+package-lock.json
