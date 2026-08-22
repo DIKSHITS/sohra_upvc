@@ -1,187 +1,389 @@
 .sohra-footer {
-  background-color: #1788c7;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  padding: 0;
   position: relative;
   overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, #05324d 0%, #086ea8 52%, #0b82c0 100%);
+  font-family: Arial, sans-serif;
 }
 
-.sohra-footer-row {
+.sohra-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.sohra-footer-surface {
+  position: relative;
+  z-index: 1;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 8vw, 96px) 18px;
+}
+
+.sohra-footer-hero {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px 8vw 15px;
+  align-items: center;
+  gap: 24px;
   flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-.footer-col {
-  flex: 1 1 220px;
+.footer-brand-block {
   display: flex;
-  flex-direction: column;
-}
-
-/* LEFT SECTION */
-
-.footer-col.left {
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex: 1 1 560px;
+  min-width: 0;
 }
 
 .footer-logo-main,
 .footer-mg-logo {
-  width: 140px;
-  height: 140px;
+  width: 132px;
+  height: 132px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
+.footer-brand-copy {
+  max-width: 560px;
+}
 
-/* CENTER SECTION */
+.footer-eyebrow {
+  margin: 0 0 8px;
+  color: #d7f2ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 
-.footer-col.center {
-  align-items: flex-start;
+.footer-brand-copy h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  color: #ffffff;
+}
+
+.footer-brand-copy p {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.footer-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  min-width: 300px;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.footer-cta.primary {
+  background: #ffffff;
+  color: #087fc4;
+}
+
+.footer-cta.secondary {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-cta:hover {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.footer-cta.primary:hover {
+  color: #06669b;
+}
+
+.footer-cta.secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.sohra-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 24px;
+}
+
+.footer-panel {
+  min-height: 100%;
+  padding: 24px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(3, 26, 41, 0.12);
+}
+
+.footer-panel-accent {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-panel-title {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 .footer-contact {
+  display: grid;
+  gap: 14px;
   text-align: left;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.footer-contact div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  overflow-wrap: anywhere;
+}
+
+.footer-contact .icon {
+  margin-top: 3px;
   font-size: 16px;
-  line-height: 1.8;
-}
-
-.footer-contact div{
-  margin-bottom:8px;
-}
-
-
-/* RIGHT SECTION */
-
-.footer-col.right {
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.footer-makeinindia {
-  width: 120px;
-  height: auto;
-  margin-bottom: 10px;
+  color: #d7f2ff;
+  flex-shrink: 0;
 }
 
 .footer-social-label {
-  margin: 10px 0;
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.86);
   font-size: 15px;
-  font-weight: 600;
+  line-height: 1.7;
 }
 
 .footer-social {
   display: flex;
-  gap: 18px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-
-/* SOCIAL ICONS */
-
 .footer-social a {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #fff;
+  color: #ffffff;
   font-size: 20px;
   text-decoration: none;
-
-  transition: all .3s ease;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 .footer-social a:hover {
-  background: #fff;
-  color: #1788c7;
-  transform: translateY(-5px);
+  background: #ffffff;
+  color: #087fc4;
 }
 
-
-/* ICONS */
-
-.icon {
-  margin-right: 10px;
-  font-size: 18px;
-  vertical-align: middle;
+.footer-makeinindia {
+  width: 122px;
+  height: auto;
+  margin-top: 18px;
 }
-
-
-/* FOOTER BOTTOM */
 
 .footer-copy {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 14px;
-  opacity: .95;
-  margin-top: 15px;
-  padding: 15px;
-  border-top: 1px solid rgba(255,255,255,.15);
+  line-height: 1.6;
 }
 
-
-/* DEVELOPER CREDIT */
-
-.developer-credit{
-  display:inline-block;
-  margin-top:8px;
-  font-size:13px;
-  color:#e9f3ff;
+.developer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #eff9ff;
 }
 
-.developer-credit strong{
-  color:#ffd700;
-  font-weight:600;
+.developer-credit strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
-.developer-credit:hover{
-  transform:scale(1.03);
-  transition:.3s;
+.footer-brand-copy h2,
+.footer-panel,
+.footer-social a,
+.footer-cta {
+  box-sizing: border-box;
 }
 
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.sohra-footer-row{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    padding:25px 5vw;
+.footer-panel,
+.footer-cta,
+.footer-social a {
+  border-radius: 18px;
 }
 
-.footer-col{
-    align-items:center !important;
-    margin-bottom:25px;
+.footer-panel-title,
+.footer-social-label,
+.footer-brand-copy p,
+.footer-contact,
+.footer-copy {
+  letter-spacing: 0.01em;
 }
 
-.footer-col.center{
-    align-items:center !important;
+.footer-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.footer-contact{
-    text-align:center;
+@media (max-width: 900px) {
+  .sohra-footer-surface {
+    padding: 28px 5vw 16px;
+  }
+
+  .sohra-footer-hero {
+    align-items: flex-start;
+  }
+
+  .footer-brand-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-cta-group {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .sohra-footer-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-panel {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .footer-copy {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-.footer-social{
-    justify-content:center;
+@media (max-width: 720px) {
+  .footer-brand-copy h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+
+  .footer-brand-copy p,
+  .footer-social-label,
+  .footer-contact {
+    font-size: 14px;
+  }
+
+  .footer-panel {
+    padding: 18px;
+  }
+
+  .footer-social {
+    gap: 12px;
+  }
 }
 
-.footer-logo-main{
-    width:120px;
-    height:120px;
+@media (max-width: 560px) {
+  .sohra-footer-surface {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-brand-block {
+    gap: 16px;
+  }
+
+  .footer-logo-main,
+  .footer-mg-logo {
+    width: 92px;
+    height: 92px;
+  }
+
+  .footer-brand-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-cta {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .footer-cta-group {
+    width: 100%;
+  }
+
+  .footer-social a {
+    width: 42px;
+    height: 42px;
+  }
 }
 
-.footer-makeinindia{
-    width:100px;
-}
+@media (max-width: 420px) {
+  .footer-panel {
+    padding: 16px;
+    border-radius: 16px;
+  }
 
+  .footer-brand-copy p {
+    line-height: 1.65;
+  }
+
+  .footer-contact {
+    gap: 12px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+  }
+
+  .footer-social {
+    gap: 10px;
+  }
+
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+  }
 }

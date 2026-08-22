@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SuccessfulProjects.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import CustomerReviews from "./CustomerReviews";
 
 // Images
 import bg1 from "./logo/bg1.jpg";
@@ -264,6 +265,12 @@ const SuccessfulProjects = ({ includeLayout = true }) => {
         </div>
 
       )}
+      {/* =================================================
+          CUSTOMER REVIEWS
+          LAST SECTION BEFORE YOUR FOOTER
+      ================================================= */}
+
+      <CustomerReviews />
 
     </section>
     {includeLayout && <Footer />}

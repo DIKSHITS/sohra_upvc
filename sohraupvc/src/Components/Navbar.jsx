@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SohraLogo from "../Components/logo/sohra-metal-logo.png";
+import SohraLogo from "../Components/logo/sohra-updated.png";
 import "./Navbar.css";
 
 const Navbar = () => {

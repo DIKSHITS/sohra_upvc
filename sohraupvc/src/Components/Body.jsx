@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "./Body.css";
 
 // =====================================================
+// CUSTOMER REVIEWS
+// =====================================================
+
+
+
+// =====================================================
 // HERO IMAGES
 // =====================================================
 
@@ -148,11 +154,8 @@ function Body() {
   // =====================================================
 
   const [showModal, setShowModal] = useState(false);
-
   const [isMuted, setIsMuted] = useState(false);
-
   const [isPlaying, setIsPlaying] = useState(false);
-
   const [speed, setSpeed] = useState(1);
 
   // =====================================================
@@ -160,7 +163,6 @@ function Body() {
   // =====================================================
 
   const modalWrapRef = useRef(null);
-
   const modalPlayerRef = useRef(null);
 
   // =====================================================
@@ -301,7 +303,7 @@ function Body() {
 
     return () => {
       if (player) {
-        player.unload().catch(() => { });
+        player.unload().catch(() => {});
       }
 
       modalPlayerRef.current = null;
@@ -353,7 +355,6 @@ function Body() {
     const link = document.createElement("a");
 
     link.href = BrochurePDF;
-
     link.download = "Sohra-UPVC-Brochure.pdf";
 
     document.body.appendChild(link);
@@ -494,10 +495,7 @@ function Body() {
 
           <div className="hero-buttons">
 
-            {/* =================================================
-                BUTTON 1
-                EXPLORE PRODUCTS
-            ================================================= */}
+            {/* BUTTON 1 */}
 
             <button
               type="button"
@@ -511,10 +509,7 @@ function Body() {
               </span>
             </button>
 
-            {/* =================================================
-                BUTTON 2
-                DISCOVER STORY
-            ================================================= */}
+            {/* BUTTON 2 */}
 
             <button
               type="button"
@@ -528,10 +523,7 @@ function Body() {
               </span>
             </button>
 
-            {/* =================================================
-                BUTTON 3
-                DOWNLOAD BROCHURE
-            ================================================= */}
+            {/* BUTTON 3 */}
 
             <button
               type="button"
@@ -556,56 +548,93 @@ function Body() {
             {/* FEATURE 1 */}
 
             <div className="feature-item">
+
               <div className="feature-icon">
                 ✓
               </div>
 
               <div className="feature-content">
-                <strong>Durable &</strong>
-                <span>Long Lasting</span>
+
+                <strong>
+                  Durable &
+                </strong>
+
+                <span>
+                  Long Lasting
+                </span>
+
               </div>
+
             </div>
 
             {/* FEATURE 2 */}
 
             <div className="feature-item">
+
               <div className="feature-icon">
                 ♨
               </div>
 
               <div className="feature-content">
-                <strong>Thermal &</strong>
-                <span>Sound Insulation</span>
+
+                <strong>
+                  Thermal &
+                </strong>
+
+                <span>
+                  Sound Insulation
+                </span>
+
               </div>
+
             </div>
 
             {/* FEATURE 3 */}
 
             <div className="feature-item">
+
               <div className="feature-icon">
                 ◉
               </div>
 
               <div className="feature-content">
-                <strong>Eco-Friendly</strong>
-                <span>& Sustainable</span>
+
+                <strong>
+                  Eco-Friendly
+                </strong>
+
+                <span>
+                  & Sustainable
+                </span>
+
               </div>
+
             </div>
 
             {/* FEATURE 4 */}
 
             <div className="feature-item">
+
               <div className="feature-icon">
                 ⚙
               </div>
 
               <div className="feature-content">
-                <strong>Low Maintenance</strong>
-                <span>& Easy to Clean</span>
+
+                <strong>
+                  Low Maintenance
+                </strong>
+
+                <span>
+                  & Easy to Clean
+                </span>
+
               </div>
+
             </div>
 
           </div>
+
         </div>
 
         {/* =================================================
@@ -625,9 +654,7 @@ function Body() {
 
           <div className="hero-image-overlay"></div>
 
-          {/* =================================================
-              PREVIOUS
-          ================================================= */}
+          {/* PREVIOUS */}
 
           <button
             type="button"
@@ -638,9 +665,7 @@ function Body() {
             ‹
           </button>
 
-          {/* =================================================
-              NEXT
-          ================================================= */}
+          {/* NEXT */}
 
           <button
             type="button"
@@ -651,9 +676,7 @@ function Body() {
             ›
           </button>
 
-          {/* =================================================
-              SLIDE COUNTER
-          ================================================= */}
+          {/* SLIDE COUNTER */}
 
           <div className="slide-counter">
 
@@ -669,9 +692,7 @@ function Body() {
 
           </div>
 
-          {/* =================================================
-              DOTS
-          ================================================= */}
+          {/* DOTS */}
 
           <div className="slider-dots">
 
@@ -679,8 +700,9 @@ function Body() {
               <button
                 type="button"
                 key={index}
-                className={`slider-dot ${activeSlide === index ? "active" : ""
-                  }`}
+                className={`slider-dot ${
+                  activeSlide === index ? "active" : ""
+                }`}
                 onClick={() => setActiveSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -689,6 +711,7 @@ function Body() {
           </div>
 
         </div>
+
       </section>
 
       {/* =================================================
@@ -706,8 +729,15 @@ function Body() {
           </div>
 
           <div className="stat-text">
-            <strong>10+</strong>
-            <span>Years of Experience</span>
+
+            <strong>
+              10+
+            </strong>
+
+            <span>
+              Years of Experience
+            </span>
+
           </div>
 
         </div>
@@ -723,8 +753,15 @@ function Body() {
           </div>
 
           <div className="stat-text">
-            <strong>5000+</strong>
-            <span>Projects Completed</span>
+
+            <strong>
+              5000+
+            </strong>
+
+            <span>
+              Projects Completed
+            </span>
+
           </div>
 
         </div>
@@ -740,8 +777,15 @@ function Body() {
           </div>
 
           <div className="stat-text">
-            <strong>98%</strong>
-            <span>Customer Satisfaction</span>
+
+            <strong>
+              98%
+            </strong>
+
+            <span>
+              Customer Satisfaction
+            </span>
+
           </div>
 
         </div>
@@ -757,8 +801,15 @@ function Body() {
           </div>
 
           <div className="stat-text">
-            <strong>25+</strong>
-            <span>Expert Team Members</span>
+
+            <strong>
+              25+
+            </strong>
+
+            <span>
+              Expert Team Members
+            </span>
+
           </div>
 
         </div>
@@ -770,6 +821,7 @@ function Body() {
       ================================================= */}
 
       {showModal && (
+
         <div
           className="video-modal"
           onClick={closeVideo}
@@ -802,9 +854,7 @@ function Body() {
 
             </div>
 
-            {/* =================================================
-                VIDEO CONTROLS
-            ================================================= */}
+            {/* VIDEO CONTROLS */}
 
             <div className="modal-controls">
 
@@ -828,8 +878,9 @@ function Body() {
 
               <button
                 type="button"
-                className={`ctl ${speed === 1 ? "selected" : ""
-                  }`}
+                className={`ctl ${
+                  speed === 1 ? "selected" : ""
+                }`}
                 onClick={() => setRate(1)}
               >
                 1×
@@ -837,8 +888,9 @@ function Body() {
 
               <button
                 type="button"
-                className={`ctl ${speed === 2 ? "selected" : ""
-                  }`}
+                className={`ctl ${
+                  speed === 2 ? "selected" : ""
+                }`}
                 onClick={() => setRate(2)}
               >
                 2×
@@ -846,8 +898,9 @@ function Body() {
 
               <button
                 type="button"
-                className={`ctl ${speed === 3 ? "selected" : ""
-                  }`}
+                className={`ctl ${
+                  speed === 3 ? "selected" : ""
+                }`}
                 onClick={() => setRate(3)}
               >
                 3×
@@ -880,8 +933,17 @@ function Body() {
             </div>
 
           </div>
+
         </div>
+
       )}
+
+      
+
+      {/* =================================================
+          YOUR EXISTING FOOTER
+          KEEP YOUR EXISTING FOOTER CODE HERE
+      ================================================= */}
 
     </main>
   );
